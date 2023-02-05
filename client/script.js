@@ -7,10 +7,6 @@ const chatContainer = document.querySelector('#chat_container')
 let loadInterval
 let isRunning = false
 
-const input = document.querySelector('input[type="text"]');
-input.addEventListener('blur', () => {
-  input.scrollIntoView({ behavior: 'smooth' });
-});
 
 function loader(element) {
     element.textContent = 'Curating the perfect message'
@@ -135,6 +131,7 @@ const handleSubmit = async (e) => {
 
     // to focus scroll to the bottom 
     chatContainer.scrollBottom = chatContainer.scrollHeight
+    chatContainer.scrollBottom
 
     // specific message div 
     const messageDiv = document.getElementById(uniqueId)
@@ -142,6 +139,11 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
+
+    const input = document.querySelector('input[type="text"]');
+        input.addEventListener('blur', () => {
+        input.scrollIntoView({ behavior: 'smooth' });
+        });
 
 
     const response = await fetch('https://waiv.onrender.com', {
