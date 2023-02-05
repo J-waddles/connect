@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+  background: #343541;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  padding-top: 35px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  background-color: #45c0eca0;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: #e7ecf346;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+
+  background: #5436DA;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: #00000045;
+}
+
+.profile img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: #dcdcdc;
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #40414F;
+
+
+  position: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+textarea {
+  width: 100%;
+
+  color: #fff;
+  font-size: 18px;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: DodgerBlue;
+  width: 100px;
+  top: 20px;
+  right: 10px;
+  border: 5px solid transparent;
+  border-color:  #fff transparent transparent transparent;
+  font-size: 22px;
+  color: #fff;
+}
+
+form img {
+  width: 30px;
+  height: 30px;
+}
+
+#user_interest_form {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+/* user_interest_form select{
+  color: #fff;
+} */
+
+
+#form-box {
+  background-color: #5cc2ea;
+  width: 100%;
+}
+
+#gender-select, #acquaintance, #persona, #user_interest_form input {
+  background-color: DodgerBlue;
+  width: 120px;
+  top: 25px;
+  right: 10px;
+  border: 3px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  color: #fff;
+  font-size: 12px;
+}
+#user_interest_form input {
+  height: 28px;
+  width: auto;
+}
+
+enter-button {
+  display: right;
+  width: 100%;
+  align-items: center;
+}
+
+/* Nav code */
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(44, 66, 138);
+  overflow: hidden;
+  float: center;
+  position: relative;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  position: fixed;
+  transition: top 0.3s;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #6a14a3;
+  color: white;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* menu code */
+.container {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* form pop up */
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 280px;
+  height: 70px;
+  
+  position: fixed;
+  bottom: 25px;
+  right: 28px;
+  font-size: 22px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  border: 3px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  font-size: 18px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+/* Phone screen code */
+@media screen and (max-width: 800px) {
+  .open-button, .form-container, .form-popup{
+    width: 100%;
+    right: 0px;
+    bottom: 0px;
+    border: transparent;
+  }
+  .form-container .btn {
+    font-size: 14px;
+    height: 50px;
+    padding: 2px;
+    margin: 2px;
+  }
+  
+}

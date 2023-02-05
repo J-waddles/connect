@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wAIv - Your Conversation Starter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <!-- <div class="topnav" id="topnav">
+    <a class="active" href="#home">wAIv</a>
+  </div> -->
+  <div class="container" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <body>
+    <div id="app">
+      <div id="chat_container"></div>
+
+      <button class="open-button" onclick="openForm()">Start wAIv</button>
+      <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>A lengendary conversation is about to start!</h1>
+          <label for="gender-select">For a:</label><br>
+          <select name="Gender" id="gender-select" required>
+            <!-- <option value="">--Please select gender--</option> -->
+            <option value="girl">Girl</option>
+            <!-- <option value="boy">Boy</option> -->
+          </select>
+          <br> <br>
+          <label for="acquaintance">In the style of:</label>
+          <br>
+          <select name="WritingStyle" id="acquaintance" required>
+            <option value="haven't met before">Haven't met</option>
+            <option value="met once">Met once</option>
+            <option value="am messaging">Messaging atm</option>
+            <option value="am friends with">Friend</option>
+          </select>
+          <br><br>
+          <label for="persona">Come across:</label>
+          <br>
+          <select id="persona" name="persona">
+            <option value="making me look like the most charming confident man in the room">Rizz</option>          
+            <!-- <option value="little bit playful">Playful</option>           -->
+            <option value="can use emoji at the end">Emoji</option>
+            <option value="interested">Interested</option>
+            <!-- <option value="a pick up line">Pick-up line</option> -->
+          </select>
+          <br><br>
+          <label for="interests">What are their interests</label>
+          <input type="text" id="interests" name="interests" placeholder="Beach, Gym and Travel" maxlength="35">
+
+          <button type="submit" class="btn">Start wAIv</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      
+        <!-- <div class="enter-button">
+        <button type="submit" alt="send">wAIv</button> -->
+      
+    </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+  </body>
+</html>
