@@ -140,11 +140,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const input = document.querySelector('input[type="text"]');
-        input.addEventListener('blur', () => {
-        input.scrollIntoView({ behavior: 'smooth' });
-        });
-
+    form.querySelector('input').blur();
 
     const response = await fetch('https://waiv.onrender.com', {
         method: 'POST',
