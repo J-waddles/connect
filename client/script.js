@@ -164,6 +164,7 @@ const handleSubmit = async (e) => {
         alert(err)
     }
     isRunning = false;
+    form.blur()
 }
 
 
