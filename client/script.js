@@ -172,5 +172,6 @@ form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13 && !isRunning) {
         handleSubmit(e)
         closeForm()
+        $(this).blur();
     }
 })
