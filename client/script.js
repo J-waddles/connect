@@ -5,6 +5,7 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
+let isRunning = false
 
 function loader(element) {
     element.textContent = 'Curating the perfect message'
@@ -102,11 +103,9 @@ function curateMessage(gender, acquaintance, interests, persona) {
 //   as an open-ended text starter for a natural flowing conversation.`
 }
 
-
-
 const handleSubmit = async (e) => {
     e.preventDefault()
-
+    isRunning = true;
     const data = new FormData(form)
 
     // user's chatstripe
@@ -164,11 +163,14 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "Something went wrong"
         alert(err)
     }
+    isRunning = false;
 }
+
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && !isRunning) {
         handleSubmit(e)
+        closeForm()
     }
 })
