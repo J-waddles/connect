@@ -164,7 +164,7 @@ const handleSubmit = async (e) => {
         alert(err)
     }
     isRunning = false;
-    blur();
+    $(this).blur();
 }
 
 
