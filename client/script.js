@@ -2,7 +2,7 @@ import bot from './assets/wAIv.svg'
 import user from './assets/user.svg'
 
 const form = document.querySelector('form')
-const chatContainer = document.querySelector('#chat_container')
+const chatContainer = document.querySelector('chat_container')
 
 let loadInterval
 let isRunning = false
@@ -130,8 +130,7 @@ const handleSubmit = async (e) => {
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
 
     // to focus scroll to the bottom 
-    chatContainer.scrollBottom = chatContainer.scrollHeight
-    chatContainer.scrollBottom
+    chatContainer.scrollTop = chatContainer.scrollHeight
 
     // specific message div 
     const messageDiv = document.getElementById(uniqueId)
