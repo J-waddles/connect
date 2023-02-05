@@ -7,6 +7,11 @@ const chatContainer = document.querySelector('#chat_container')
 let loadInterval
 let isRunning = false
 
+const input = document.querySelector('input[type="text"]');
+input.addEventListener('blur', () => {
+  input.scrollIntoView({ behavior: 'smooth' });
+});
+
 function loader(element) {
     element.textContent = 'Curating the perfect message'
 
@@ -129,10 +134,11 @@ const handleSubmit = async (e) => {
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
 
     // to focus scroll to the bottom 
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    chatContainer.scrollBottom = chatContainer.scrollHeight
 
     // specific message div 
     const messageDiv = document.getElementById(uniqueId)
+
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
@@ -164,15 +170,12 @@ const handleSubmit = async (e) => {
         alert(err)
     }
     isRunning = false;
-    form.blur()
 }
-
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13 && !isRunning) {
         handleSubmit(e)
         closeForm()
-        form.blur()
     }
 })  
