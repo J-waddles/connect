@@ -346,5 +346,12 @@ enter-button {
     padding: 2px;
     margin: 2px;
   }
+
+  input[type="text"], textarea {
+    font-size: 1em;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+ }
   
 }
