@@ -164,6 +164,7 @@ const handleSubmit = async (e) => {
         alert(err)
     }
     isRunning = false;
+    blur();
 }
 
 
@@ -172,6 +173,6 @@ form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13 && !isRunning) {
         handleSubmit(e)
         closeForm()
-        blur();
+
     }
 })  
