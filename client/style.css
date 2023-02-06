@@ -176,13 +176,14 @@ form img {
 
 #gender-select, #acquaintance, #persona, #user_interest_form input {
   background-color: DodgerBlue;
-  width: 120px;
+  width: 150px;
   top: 25px;
   right: 10px;
   border: 3px solid transparent;
   border-color: #fff transparent transparent transparent;
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;
+  height: 30px;
 }
 #user_interest_form input {
   height: 28px;
