@@ -323,9 +323,9 @@ enter-button {
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: transparent;
+  background-color: rgb(247, 207, 207);
   color: black;
-  border-color: red;
+  border-color: white rgb(247, 207, 207) rgb(247, 207, 207) rgb(247, 207, 207);
 }
 
 /* Add some hover effects to buttons */
