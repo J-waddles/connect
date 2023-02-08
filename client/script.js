@@ -169,7 +169,18 @@ const handleSubmit = async (e) => {
     isRunning = false;
 }
 
+import { Analytics } from '@vercel/analytics/react';
 
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
+}
+
+export default MyApp;
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
