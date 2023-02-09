@@ -77,21 +77,34 @@ function curateMessage(gender, acquaintance, interests, persona) {
   
   prompt = 
   `
-  I am wanting the responses to come across with 'rizz' which means one's ability to attract a romantic interest, It can be defined as an ability to charm or flirt with a potential partner, with pick-up lines and general chat.
-  Thus, i am expecting responses to come across as such.
+Here is the context for the message:
+An online direct message:
+From a man to a ${gender} I ${acquaintance}.
+I need a conversation opener including single interest: ${interests}.
+Here are the requirements:
+IF they select rizz, meaning one's ability to attract a romantic interest, 
+It can be defined as an ability to charm or flirt with a potential partner, 
+with pick-up lines and general chat. I then want it to sound like a jock with low IQ. 
+Make the output come across in a way they might find humorous.
+IF they select interested I want it to come across as the popular kid who knows how to charm the females. 
+Make the output feel like natural romantic charm conversation that flows over text.
+IF they select an emoji I want it to come across as either. but put a relatable emoji.
 
-  Here is the context for the message:
-  An online direct message:
-  To a ${gender} I ${acquaintance}.
-  I need a conversation opener with a single interest including: ${interests}.
-  Here are the requirements:
-  Give 3 different openers for each interest. Make sure each is different in format but keep them short (7-14 words).
-  Each to come across with lots of rizz, ${persona}.
-  Make the output come across in a way they might find humorous.
-  Make iutput about them.
-  Make the output feel like natural romantic charm conversation that flows over text.
-  No call to action. 
-  Written like a jock with low IQ.
+Thus, i am expecting responses to come across as such, 
+examples
+persona: rizz 
+interests: Beach, running and gym.
+Beach: If a beach could talk, I'd be jealous of the attention it gets from you!
+Running: I'd take you in a run but dont know if you could keep up ;)
+Gym: mind if you squeeze me into your workout routine ;)
+
+persona: interested
+interests: running, drinking
+running: Need someone to keep up your pace? Give me a call.
+drinking: you say drinking problem, i think its a valid solutions ;)
+
+Person: ${persona}
+Interests: ${interests}
   `
 //   `An online direct message:
 //   For a: ${gender} ${acquaintance}.
