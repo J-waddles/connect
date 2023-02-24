@@ -90,6 +90,8 @@ IF they select interested I want it to come across as the popular kid who knows 
 Make the output feel like natural romantic charm conversation that flows over text.
 IF they select an emoji I want it to come across as either. but put a relatable emoji.
 
+Constraint: Do not include pretext or context in message.
+
 Thus, i am expecting responses to come across as such, 
 examples
 persona: rizz 
