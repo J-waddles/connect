@@ -64,17 +64,7 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
-function curateMessage(gender, acquaintance, interests, persona) {
-  // prompt = `An online direct message:
-  //   For a: ${gender} I ${acquaintance}.
-  //   I want a single question about a single interest: ${interests}
-  //   I want each question to come across as ${persona}
-  //   Give a 3 different lines for each interest, 
-  //   make them sound human for people who ${persona}, let the tone come across little playful, 
-  //   As an open-ended text starter for a conversation.
-  //   natural flowing question. 
-  //   I want to come across interested about the persons life`
-  
+function curateMessage(gender, acquaintance, interests, persona) {  
   prompt = 
   `
 Here is the context for the message:
@@ -82,11 +72,11 @@ An online direct message:
 From a man to a ${gender} I ${acquaintance}.
 I need a conversation opener including single interest: ${interests}.
 Here are the requirements:
-IF they select rizz, meaning one's ability to attract a romantic interest, 
+IF ${persona} = rizz, rizz meaning one's ability to attract a romantic interest, 
 It can be defined as an ability to charm or flirt with a potential partner, 
 with pick-up lines and general chat. I then want it to sound like a jock with low IQ. 
 Make the output come across in a way they might find humorous.
-IF they select interested I want it to come across as the popular kid who knows how to charm the females. 
+IF ${persona} = interested, I want it to come across as the popular kid who knows how to charm the females. 
 Make the output feel like natural romantic charm conversation that flows over text.
 IF they select an emoji I want it to come across as either. but put a relatable emoji.
 
@@ -97,26 +87,17 @@ examples
 persona: rizz 
 interests: Beach, running and gym.
 Beach: If a beach could talk, I'd be jealous of the attention it gets from you!
-Running: I'd take you in a run but dont know if you could keep up ;)
+Running: I'd take you in a run but don't know if you could keep up ;)
 Gym: mind if you squeeze me into your workout routine ;)
 
 persona: interested
-interests: running, drinking
+interests: running, partying
 running: Need someone to keep up your pace? Give me a call.
-drinking: you say drinking problem, i think its a valid solutions ;)
+drinking: You say drinking problem, I think it's a valid solutions ;)
 
 Person: ${persona}
 Interests: ${interests}
   `
-//   `An online direct message:
-//   For a: ${gender} ${acquaintance}.
-//   I want a single question about a single interest: ${interests}
-//   Give 3 different lines for each interest;
-//   different interogative questions,
-//   one would you rather question,
-//   I want each question to come across as playfully interested
-//   make them sound human for people that havent met before, 
-//   as an open-ended text starter for a natural flowing conversation.`
 }
 
 const handleSubmit = async (e) => {
@@ -133,9 +114,6 @@ const handleSubmit = async (e) => {
 
     curateMessage(gender, acquaintance, interests, persona)
 
-    // `Can you please provide some direct message examples I could use, here is the context:
-    // For a ${gender} I ${style}, can you base each around a single interest, 
-    // Interests: ${interests}. In the theme of: ${message}. Give a couple different lines, make them sound ${message} as an open ended text starter for a conversation online`;
     chatContainer.innerHTML += chatStripe(false,  `For these interests: ${interests}.`)
     // to clear the textarea input 
     //form.reset()
