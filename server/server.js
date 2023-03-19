@@ -28,8 +28,8 @@ app.post('/', async (req, res) => {
         const prompt = req.body.prompt;
 
         const response = await openai.createCompletion({
-            model: "gpt-3.5-turbo",
-            messages: [{"role": "user", "content": `${prompt}`}],
+            model: "text-davinci-003",
+            prompt: `${prompt}`,
             temperature: 0.9,
             max_tokens: 269,
             top_p: 1,
