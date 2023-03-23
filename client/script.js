@@ -94,11 +94,11 @@ const handleSubmit = async (e) => {
     // change interests here
     chatContainer.innerHTML += chatStripe(false,  
         `Tips for conversation:
-        1. The conversation is about them.
-        2. Show genuine appreciation.
-        3. Compliment them authentically.
-        4. It's not about YOU, focus on them.
-        5. If its meant to be the conversation will naturally flow to you.`)
+1. The conversation is about them.
+2. Show genuine appreciation.
+3. Compliment them authentically.
+4. It's not about YOU, focus on them.
+5. It'll flow naturally to you.`)
     // to clear the textarea input 
     //form.reset()
 

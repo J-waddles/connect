@@ -87,8 +87,9 @@ body {
   padding-top: 35px;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  background-color: #b2b2b2eb;
-  /* #7eb5a8eb */
+  /* background-color: #7eb5a8eb; */
+  background-color: whitesmoke;
+  
 }
 
 /* hides scrollbar */
@@ -100,10 +101,15 @@ body {
 .wrapper {
   width: 100%;
   padding: 15px;
+  border: 3px solid transparent;
+  border-color:  transparent transparent transparent transparent;
 }
 
 .ai {
   background: #e5e5e569;
+  border: 3px solid rgb(142, 254, 215);
+  border-color:  #fff rgb(142, 254, 215) #fff rgb(142, 254, 215);
+
 }
 
 .chat {
@@ -115,6 +121,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
+
 }
 
 .profile {
@@ -122,7 +129,7 @@ body {
   height: 36px;
   border-radius: 5px;
 
-  background: rgb(178, 178, 178);
+  background: rgb(73, 160, 206);
 
   display: flex;
   justify-content: center;
@@ -142,12 +149,13 @@ body {
 .message {
   flex: 1;
 
-  color: rgb(142, 254, 215);
+  color: rgb(0, 0, 0);
   /* text-shadow: 1px 1px 4px rgb(144, 144, 144); */
   font-size: 20px;
 
   max-width: 100%;
   overflow-x: scroll;
+  
 
   /*
    * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
@@ -171,7 +179,7 @@ form {
   max-width: 500px;
   margin: 0 auto;
   padding: 10px;
-  background: #40414F;
+  background: #0715d6;
 
 
   position: center;
@@ -190,6 +198,7 @@ textarea {
   border-radius: 5px;
   border: none;
   outline: none;
+  
 }
 
 .button {
@@ -227,7 +236,7 @@ form img {
 }
 
 #type-of-message, #type-of-connection, #user_interest_form input {
-  background-color: rgb(142, 254, 215);
+  background-color: rgba(142, 254, 215, 0.762);
   width: 150px;
   top: 25px;
   right: 10px;
@@ -313,7 +322,7 @@ enter-button {
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
-  color: white;
+  color: rgb(142, 254, 215);
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -408,6 +417,10 @@ enter-button {
     width: 100%;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+ }
+  .open-button {
+    border: 3px solid transparent;
+    border-color: rgb(142, 254, 215) transparent transparent transparent;
  }
   
 }
