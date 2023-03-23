@@ -15,51 +15,76 @@
     <div class="bar2"></div>
     <div class="bar3"></div>
   </div>
-  <body>
+  <body><div id="myNav" class="overlay" style="width: 0%;">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="https://cynosure.life">Home</a>
+    </div>
+  
+  </div>
+  
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <div class="container" onclick="openNav()">
+    <div class="container">
+    <!-- add above when fixed -->
+    <!-- onclick="myFunction(this)" -->
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+    </div>
+  </div>
+  
     <div id="app">
       <div id="chat_container"></div>
 
-      <button class="open-button" onclick="openForm()">Start wAIv</button>
+      <button class="open-button" onclick="openForm()">Start</button>
       <div class="form-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
           <h1>A lengendary conversation is about to start!</h1>
-          <label for="gender-select">For a:</label><br>
-          <select name="Gender" id="gender-select" required>
-            <!-- <option value="">--Please select gender--</option> -->
-            <option value="girl">Girl</option>
-            <!-- <option value="boy">Boy</option> -->
+          <!-- insert form -->
+          <!-- Step 1: Type of Message -->
+          <label for="type-of-message">Type of message:</label>
+          <br>
+          <select id="type-of-message" name="type-of-message">
+            <option value="online">Online</option>
+            <option value="in-person">In Person</option>
           </select>
-          <br>
-          <label for="acquaintance">In the style of:</label>
-          <br>
-          <select name="WritingStyle" id="acquaintance" required>
-            <option value="haven't met before">Haven't met</option>
-            <option value="met once">Met once</option>
-            <option value="am messaging">Messaging atm</option>
-            <option value="am friends with">Friend</option>
-          </select>
-          <br>
-          <label for="persona">Come across:</label>
-          <br>
-          <select id="persona" name="persona">
-            <option value="rizz">Rizz</option>          
-            <!-- <option value="little bit playful">Playful</option>           -->
-            <option value="emoji">Emoji</option>
-            <option value="interested">Interested</option>
-            <!-- <option value="a pick up line">Pick-up line</option> -->
-          </select>
-          
-          <br>
-          <label for="interests">What are their interests</label>
-          <input type="text" id="interests" name="interests" placeholder="Beach, Gym and Travel" maxlength="35">
+          <br><br>
 
-          <button type="submit" class="btn" onclick="closeForm()">Start wAIv</button>
+          <!-- Step 2: Type of Connection -->
+          <label for="type-of-connection">Type of connection you're looking for:</label>
+          <br>
+          <select id="type-of-connection" name="type-of-connection">
+            <option value="friendship">Friendship</option>
+            <option value="business">Business</option>
+            <option value="work-collaboration">To Learn</option>
+          </select>
+          <br><br>
+
+          <!-- Step 3: Other Inputs -->
+          <div id="other-inputs">
+            <!-- Interests -->
+            <label for="interests">What are they building/ creating/ interests? </label>
+            <br>
+            <input type="text" id="interests" name="interests" maxlength="100">
+            <br>
+            <!-- Conenction -->
+            <label for="connection-to">How are you connected? (eg. spaces, community, etc)</label>
+            <br>
+            <input type="text" id="connection-to" name="connection-to" maxlength="100">
+          </div>
+
+          <button type="submit" class="btn" onclick="closeForm()">Get Connected</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       
         <!-- <div class="enter-button">
         <button type="submit" alt="send">wAIv</button> -->
       
-    </div>
+    </form></div>
     </div>
 
     <script type="module" src="script.js"></script>
@@ -74,7 +99,17 @@
     function closeForm() {
     document.getElementById("myForm").style.display = "none";
     }
+    /* Open when someone clicks on the span element */
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-  </body>
+  
+
+</body>
 </html>

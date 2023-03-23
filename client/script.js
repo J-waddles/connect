@@ -64,39 +64,16 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
-function curateMessage(gender, acquaintance, interests, persona) {  
+function curateMessage(MessageType, connectionType, interests, connection) {
+ 
   prompt = 
   `
-Here is the context for the message:
-An online direct message:
-From a man to a ${gender} I ${acquaintance}.
-I need a conversation opener including single interest: ${interests}.
-Here are the requirements:
-IF ${persona} = rizz, rizz meaning one's ability to attract a romantic interest, 
-It can be defined as an ability to charm or flirt with a potential partner, 
-with pick-up lines and general chat. I then want it to sound like a jock with low IQ. 
-Make the output come across in a way they might find humorous.
-IF ${persona} = interested, I want it to come across as the popular kid who knows how to charm the females. 
-Make the output feel like natural romantic charm conversation that flows over text.
-IF they select an emoji I want it to come across as either. but put a relatable emoji.
-
-Constraint: Do not include pretext or context in message.
-
-Thus, i am expecting responses to come across as such, 
-examples
-persona: rizz 
-interests: Beach, running and gym.
-Beach: If a beach could talk, I'd be jealous of the attention it gets from you!
-Running: I'd take you in a run but don't know if you could keep up ;)
-Gym: mind if you squeeze me into your workout routine ;)
-
-persona: interested
-interests: running, partying
-running: Need someone to keep up your pace? Give me a call.
-drinking: You say drinking problem, I think it's a valid solutions ;)
-
-Person: ${persona}
-Interests: ${interests}
+  You are a networking and connection guru, who always knows the best way to start a genuine conversation.
+  When I give you infomation about a type of person I want to connect to; with different ways of connecting, 
+  you adjust your prompts accordingly to ensure it is a conversation starter that is about the other person i want to connect with.
+  The conversation you be focussed on the other person and should show some sort of genuine appreciation towards that persons work or interests. 
+  You have to generate a start message for talking ${MessageType} regarding ${connectionType}. This should relate to their interests or work of: ${interests}. 
+  I have a connection to them through: ${connection}. 
   `
 }
 
@@ -107,14 +84,21 @@ const handleSubmit = async (e) => {
 
     // user's chatstripe
 
-    const gender = document.querySelector("#gender-select").value;
-    const acquaintance = document.querySelector("#acquaintance").value;
+    const messageType = document.querySelector("#type-of-message").value;
+    const connectionType = document.querySelector("#type-of-connection").value;
     const interests = document.querySelector("#interests").value;
-    const persona = document.querySelector("#persona").value;
+    const connection = document.querySelector("#connection-to").value;
 
-    curateMessage(gender, acquaintance, interests, persona)
+    curateMessage(messageType, connectionType, interests, connection)
 
-    chatContainer.innerHTML += chatStripe(false,  `For these interests: ${interests}.`)
+    // change interests here
+    chatContainer.innerHTML += chatStripe(false,  
+        `Tips for conversation:
+        1. The conversation is about them.
+        2. Show genuine appreciation.
+        3. Compliment them authentically.
+        4. It's not about YOU, focus on them.
+        5. If its meant to be the conversation will naturally flow to you.`)
     // to clear the textarea input 
     //form.reset()
 
@@ -134,7 +118,8 @@ const handleSubmit = async (e) => {
 
     form.querySelector('input').blur();
 
-    const response = await fetch('https://waiv.onrender.com', {
+    // change
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -145,6 +130,9 @@ const handleSubmit = async (e) => {
         })
     })
 
+    clearInterval(loadInterval)
+    messageDiv.innerHTML = " "
+    
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
 
