@@ -87,7 +87,7 @@ body {
   padding-top: 35px;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  background-color: #ffffffeb;
+  background-color: #7eb5a8eb;
 }
 
 /* hides scrollbar */
@@ -121,7 +121,7 @@ body {
   height: 36px;
   border-radius: 5px;
 
-  background: #d0c5ff;
+  background: rgb(178, 178, 178);
 
   display: flex;
   justify-content: center;
@@ -129,7 +129,7 @@ body {
 }
 
 .ai .profile {
-  background: #00000045;
+  background: #b9b9b945;
 }
 
 .profile img {
@@ -141,7 +141,7 @@ body {
 .message {
   flex: 1;
 
-  color: rgb(0, 0, 0);
+  color: rgb(142, 254, 215);
   /* text-shadow: 1px 1px 4px rgb(144, 144, 144); */
   font-size: 20px;
 
